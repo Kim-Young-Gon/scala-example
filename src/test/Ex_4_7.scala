@@ -1,14 +1,20 @@
 package test
 
-object Ex_4_5 {
+object Ex_4_7 {
   def main(args: Array[String]): Unit = {
-    val flyingWhale = new Animal
-    flyingWhale.swim
-    flyingWhale.fly
+    val pig = new Pig
+    pig.eat
+    pig.shout
+    pig.fly
   }
 
-  class Animal extends Flying with Swimming {
-    override def fly = println("오버라이드된 메서드")
+  class Pig extends Animal with Flying with Eating {
+    def shout = println("꿀꿀")
+    def eat = println("쩝쩝")
+  }
+
+  abstract class Animal {
+    def shout
   }
 
   trait Swimming {
